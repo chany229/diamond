@@ -1,0 +1,179 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+$color_main1: rgb(94,73,147);
+$color_main2: rgb(189,153,201);
+$color_sub1: rgb(196,87,124);
+$color_sub2: rgb(239,228,232);
+$color_3: rgb(0,143,175);
+
+html,body {
+	background-color: $color_main2;
+	position: relative;
+	height: 100%;
+	margin: 0;
+	background-image: url(/assets/line_bg.png);
+}
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.clear {
+	clear: both;
+}
+
+
+input[type="email"],input[type="password"] {
+	margin: 0 0 15px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: $color_sub2;
+	color: $color_main1;
+	border: none;
+}
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-color: $color_sub2;
+    background-image: none;
+    color: $color_main1;
+}
+input::-webkit-input-placeholder {
+    color: $color_main2;
+}
+.btn {
+	margin: 0;
+	padding: 5px 10px;
+	background-color: $color_sub1;
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+}
+
+.frame {
+	background-color: $color_sub2;
+	border-radius: 20px;
+	min-width: 800px;
+	min-height: 600px;
+	top: 50px;
+	bottom: 50px;
+	left: 50px;
+	right: 50px;
+	position: absolute;
+	background-image: url(/assets/diamond_bg.png);
+	.main {
+	    position: relative;
+	    width: 100%;
+	    height: 100%;
+	    .side {
+	    	float: left;
+	    	width: 200px;
+	    	border-right: 5px dashed $color_sub1;
+	    	padding-right: 20px;
+	    	position: absolute;
+	    	top: 20px;
+	    	bottom: 20px;
+	    	left: 20px;
+	    	h1 {
+	    		margin-top: 5px;
+	    		color: #fff;
+	    		border-top: 3px solid $color_main1;
+	    		border-bottom: 3px solid $color_main1;
+	    		text-align: center;
+	    		text-shadow: $color_main1 1px 0 0, $color_main1 0 1px 0, $color_main1 -1px 0 0, $color_main1 0 -1px 0;
+	    		span {
+	    			display: block;
+		    		border-top: 1px solid $color_main1;
+	    			border-bottom: 1px solid $color_main1;
+	    			margin: 2px 0;
+	    		}
+	    	}
+
+	    	ul.menu {
+	    		padding: 20px 0 0;
+	    		li.item {
+		    		margin-bottom: 15px;
+	    			.btn {
+		    			text-align: center;
+		    			border-radius: 5px;
+		    			padding: 10px;
+		    			color: $color_3;
+		    			background-color: #fff;
+		    			&:hover, &.current {
+		    				background-color: $color_3;
+		    				color: #fff;
+		    				transition: color 1s, background-color 1s;	
+		    			}
+		    		}
+		    		&.works {
+		    			background-color: rgba(255,255,255,0.3);
+		    			border-radius: 5px;
+		    		}
+		    		.list {
+		    			color: $color_main1;
+		    			padding: 5px;
+		    			font-size: 12px;
+		    			ul.categories {
+		    				li {
+		    					ul.entries {
+				    				li {
+				    					display: inline;
+				    					font-size: 16px;
+				    				}
+		    					}
+		    				}
+		    			}
+		    			.to_tags {
+		    				float: right;
+		    			}
+		    		}
+	    		}
+	    	}
+	    	.info {
+	    		color: $color_main1;
+	    		position: absolute;
+			    bottom: 0;
+			    font-size: 11px;
+			    text-align: center;
+			    width: 200px;
+	    	}
+	    }
+	    .content {
+	    	color: $color_3;
+	    	background-color: rgba(255,255,255,.7);
+	    	border-radius: 5px;
+	    	float: left;
+	    	position: absolute;
+	    	left: 265px;
+	    	top: 20px;
+	    	bottom: 20px;
+	    	right: 20px;
+	    	padding: 20px;
+	    	overflow: hidden;
+	    	padding: 70px 10px 20px;
+	    	.icon {
+	    		background-image: url(/assets/icons.png);
+	    		background-size: 100% 100%;
+	    		width: 29px;
+	    		height: 30px;
+	    		position: absolute;
+	    		right: 0;
+	    		bottom: 0;
+	    	}
+	    	h1 {
+	    		margin: 0;
+	    		top: 0;
+	    		left: 0;
+	    		right: 0;
+	    		position: absolute;
+	    		background-color: $color_3;
+	    		color: #fff;
+	    		padding: 10px;
+	    		font-size: 20px;
+	    		height: 30px;
+	    		line-height: 30px;
+	    	}
+	    }
+	}
+}
