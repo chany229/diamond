@@ -13,6 +13,7 @@ import Vue from 'vue/dist/vue.js';
 import TurbolinksAdapter from 'vue-turbolinks';
 
 import SessionForm from '../sessions/form';
+import AdminMain from '../admin/admin';
 import Flash from '../flash';
 import '../axios_config';
 
@@ -27,6 +28,7 @@ document.addEventListener('turbolinks:load', () => {
   Flash.show();
 
   let apps = [
+    { elem: '#admin-main', object: AdminMain },
     { elem: '#session-form', object: SessionForm }
   ];
 

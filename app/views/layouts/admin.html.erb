@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diamond</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div id='admin-main'>
+      <div class='side'>
+        <h1 v-on:click="to_path('<%= admin_path %>')"><span>DIAMOND ALLIANCE</span></h1>
+
+        <ul class='menu'>
+          <li v-on:click="to_path('<%= admin_categories_path %>')">
+            <div v-bind:class="{btn: true, current: isCategory()}">category</div>
+          </li>
+          <li>
+            <div v-bind:class="{btn: true, current: !isCategory()}">item2</div>
+          </li>
+        </ul>
+
+        <div class='info'>Designed and produced by 六十</div>
+      </div>
+      <div class='body'>
+        <div class='panel'>
+          <%= link_to '', root_path, class: 'icon' %>
+          <%= yield %>
+        </div>
+      </div>
+  </div>
+</body>
+</html>

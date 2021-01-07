@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if current_user
+      redirect_to admin_path
+    end
     @form = Sessions::Form.new
   end
 
@@ -7,7 +10,7 @@ class SessionsController < ApplicationController
     @form = Sessions::Form.new(login_params)
     if @form.authenticate
       session[:user_id] = @form.user.id
-      redirect_to admin_path
+      render json: { location: admin_path }
     else
       render json: { alert: '用户名和密码不正确' },
         status: :unprocessable_entity

@@ -1,0 +1,29 @@
+<%= form_with(model: [:admin, @category]) do |form| %>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this admin_category from being saved:</h2>
+
+      <ul>
+        <% @category.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :title, placeholder: :title %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :father_id, placeholder: :father_id %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :position, placeholder: :position %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

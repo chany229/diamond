@@ -1,6 +1,8 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+//= require common
+//= require_self
 
 $color_main1: rgb(94,73,147);
 $color_main2: rgb(189,153,201);
@@ -8,36 +10,26 @@ $color_sub1: rgb(196,87,124);
 $color_sub2: rgb(239,228,232);
 $color_3: rgb(0,143,175);
 
-html,body {
+body {
 	background-color: $color_main2;
 	position: relative;
-	height: 100%;
-	margin: 0;
 	background-image: url(/assets/line_bg.png);
-}
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-.clear {
-	clear: both;
+  color: $color_main1;
 }
 
-
-input[type="email"],input[type="password"] {
+a {
+  color: $color_3;
+  &:hover, &:active {
+    color: $color_sub1;
+  }
+}
+input[type="text"],input[type="email"],input[type="password"] {
 	margin: 0 0 15px;
 	padding: 10px;
 	border-radius: 5px;
 	background-color: $color_sub2;
 	color: $color_main1;
 	border: none;
-}
-input:-internal-autofill-selected {
-    appearance: menulist-button;
-    background-color: $color_sub2;
-    background-image: none;
-    color: $color_main1;
 }
 input::-webkit-input-placeholder {
     color: $color_main2;
@@ -76,7 +68,6 @@ input::-webkit-input-placeholder {
 	    	bottom: 20px;
 	    	left: 20px;
 	    	h1 {
-	    		margin-top: 5px;
 	    		color: #fff;
 	    		border-top: 3px solid $color_main1;
 	    		border-bottom: 3px solid $color_main1;
@@ -140,7 +131,7 @@ input::-webkit-input-placeholder {
 	    	}
 	    }
 	    .content {
-	    	color: $color_3;
+	    	color: $color_main1;
 	    	background-color: rgba(255,255,255,.7);
 	    	border-radius: 5px;
 	    	float: left;
@@ -152,15 +143,6 @@ input::-webkit-input-placeholder {
 	    	padding: 20px;
 	    	overflow: hidden;
 	    	padding: 70px 10px 20px;
-	    	.icon {
-	    		background-image: url(/assets/icons.png);
-	    		background-size: 100% 100%;
-	    		width: 29px;
-	    		height: 30px;
-	    		position: absolute;
-	    		right: 0;
-	    		bottom: 0;
-	    	}
 	    	h1 {
 	    		margin: 0;
 	    		top: 0;
@@ -169,11 +151,20 @@ input::-webkit-input-placeholder {
 	    		position: absolute;
 	    		background-color: $color_3;
 	    		color: #fff;
-	    		padding: 10px;
+	    		padding: 10px 20px;
 	    		font-size: 20px;
 	    		height: 30px;
 	    		line-height: 30px;
 	    	}
+          .icon {
+            background-image: url(/assets/icons.png);
+            background-size: 100% 100%;
+            width: 29px;
+            height: 30px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+          }
 	    }
 	}
 }

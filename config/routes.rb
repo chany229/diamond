@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :entries
+  end
+  namespace :admin do
+    resources :categories
+  end
   get 'admin/index', as: :admin
   resource :session, only: %i(new create destroy)
   resources :categories
