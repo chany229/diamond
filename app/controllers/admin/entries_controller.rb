@@ -29,7 +29,7 @@ class Admin::EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to [:in, @entry], notice: 'Entry was successfully created.' }
+        format.html { redirect_to [:admin, @entry], notice: 'Entry was successfully created.' }
         format.json { render :show, status: :created, location: @entry }
       else
         format.html { render :new }
@@ -70,6 +70,6 @@ class Admin::EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:title, :body, :category_id, :user_id)
+      params.require(:entry).permit(:title, :content, :category_id, :user_id)
     end
 end

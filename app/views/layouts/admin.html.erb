@@ -18,10 +18,10 @@
 
         <ul class='menu'>
           <li v-on:click="to_path('<%= admin_categories_path %>')">
-            <div v-bind:class="{btn: true, current: isCategory()}">category</div>
+            <div v-bind:class="{btn: true, current: isCategory()}">categories</div>
           </li>
-          <li>
-            <div v-bind:class="{btn: true, current: !isCategory()}">item2</div>
+          <li v-on:click="to_path('<%= admin_entries_path %>')">
+            <div v-bind:class="{btn: true, current: isEntry()}">entries</div>
           </li>
         </ul>
 

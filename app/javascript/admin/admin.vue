@@ -19,13 +19,13 @@
 					return false;
 				}
 			},
-			isEntries: function () {
+			isEntry: function () {
 				if (this.get_path().indexOf('/admin/entries') > 0 ) {
-				return true;
-			} else {
-				return false;
+					return true;
+				} else {
+					return false;
+				}
 			}
-}
 		}
 	}
 </script>

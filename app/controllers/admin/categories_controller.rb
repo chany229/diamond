@@ -70,6 +70,6 @@ class Admin::CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.fetch(:category, {})
+      params.require(:category).fetch(:category, {})
     end
 end

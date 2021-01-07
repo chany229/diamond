@@ -1,6 +1,8 @@
 <h1>Editing Admin Entry</h1>
+<div class="content">
 
-<%= render 'form', admin_entry: @admin_entry %>
+  <%= render 'form', entry: @entry %>
 
-<%= link_to 'Show', @admin_entry %> |
-<%= link_to 'Back', admin_entries_path %>
+  <%= link_to 'Show', [:admin, @entry] %> |
+  <%= link_to 'Back', admin_entries_path %>
+</div>
